@@ -10,6 +10,7 @@ import com.gregtechceu.gtceu.api.data.chemical.material.stack.MaterialEntry;
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
+import com.gregtechceu.gtceu.common.data.machines.GTMultiMachines;
 import com.gregtechceu.gtceu.data.recipe.CustomTags;
 import com.gregtechceu.gtceu.data.recipe.VanillaRecipeHelper;
 
@@ -28,7 +29,10 @@ public class GTNHThingsRecipes {
     }
 
     private static void registerControllerRecipes(Consumer<FinishedRecipe> provider) {
-        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("steam_fuser"), Multiblocks.STEAM_FUSER.asStack(), 
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_grinder_from_bronze"), Multiblocks.STEEL_STEAM_GRINDER.asStack(), GTMultiMachines.STEAM_GRINDER.asStack());
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_grinder_to_bronze"), GTMultiMachines.STEAM_GRINDER.asStack(), Multiblocks.STEEL_STEAM_GRINDER.asStack());
+
+        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("bronze_steam_fuser"), Multiblocks.STEAM_FUSER[0].asStack(), 
         "BPB", "FTF", "BLB", 
         'B', GTBlocks.CASING_BRONZE_BRICKS.asStack(),
         'P', new MaterialEntry(TagPrefix.pipeTinyFluid, GTMaterials.Bronze),
@@ -36,46 +40,64 @@ public class GTNHThingsRecipes {
         'T', ChemicalHelper.get(TagPrefix.frameGt, GTNHThingsMaterials.Tumbaga),
         'L', new MaterialEntry(TagPrefix.pipeNormalFluid, GTMaterials.Bronze)
         );
+        
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_fuser_from_bronze"), Multiblocks.STEAM_FUSER[1].asStack(), Multiblocks.STEAM_FUSER[0].asStack());
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_fuser_to_bronze"), Multiblocks.STEAM_FUSER[0].asStack(), Multiblocks.STEAM_FUSER[1].asStack());
 
-        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("steam_purifier"), Multiblocks.STEAM_PURIFIER.asStack(),
+        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("bronze_steam_purifier"), Multiblocks.STEAM_PURIFIER[0].asStack(),
         "BPB", "RTR", "BPB",
         'B', GTBlocks.CASING_BRONZE_BRICKS.asStack(),
         'P', new MaterialEntry(TagPrefix.plate, GTMaterials.WroughtIron),
         'R', new MaterialEntry(TagPrefix.rotor, GTMaterials.Tin),
         'T', ChemicalHelper.get(TagPrefix.frameGt, GTNHThingsMaterials.Tumbaga)
         );
+        
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_purifier_from_bronze"), Multiblocks.STEAM_PURIFIER[1].asStack(), Multiblocks.STEAM_PURIFIER[0].asStack());
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_purifier_to_bronze"), Multiblocks.STEAM_PURIFIER[0].asStack(), Multiblocks.STEAM_PURIFIER[1].asStack());
 
-        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("steam_blender"), Multiblocks.STEAM_BLENDER.asStack(),
+        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("bronze_steam_blender"), Multiblocks.STEAM_BLENDER[0].asStack(),
         "BGB", "RTR", "BGB",
         'B', GTBlocks.CASING_BRONZE_BRICKS.asStack(),
         'G', ChemicalHelper.get(TagPrefix.ring, GTNHThingsMaterials.Tumbaga),
         'R', ChemicalHelper.get(TagPrefix.rotor, GTNHThingsMaterials.Tumbaga),
         'T', ChemicalHelper.get(TagPrefix.frameGt, GTNHThingsMaterials.Tumbaga)
         );
+        
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_blender_from_bronze"), Multiblocks.STEAM_BLENDER[1].asStack(), Multiblocks.STEAM_BLENDER[0].asStack());
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_blender_to_bronze"), Multiblocks.STEAM_BLENDER[0].asStack(), Multiblocks.STEAM_BLENDER[1].asStack());
 
-        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("steam_squasher"), Multiblocks.STEAM_SQUASHER.asStack(),
+        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("bronze_steam_squasher"), Multiblocks.STEAM_SQUASHER[0].asStack(),
         "BPB", "GTG", "BPB",
         'B', GTBlocks.CASING_BRONZE_BRICKS.asStack(),
         'P', CustomTags.PISTONS,
         'G', ChemicalHelper.get(TagPrefix.gear, GTNHThingsMaterials.Tumbaga),
         'T', ChemicalHelper.get(TagPrefix.frameGt, GTNHThingsMaterials.Tumbaga)
         );
+        
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_squasher_from_bronze"), Multiblocks.STEAM_SQUASHER[1].asStack(), Multiblocks.STEAM_SQUASHER[0].asStack());
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_squasher_to_bronze"), Multiblocks.STEAM_SQUASHER[0].asStack(), Multiblocks.STEAM_SQUASHER[1].asStack());
 
-        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("steam_separator"), Multiblocks.STEAM_SEPARATOR.asStack(),
+        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("bronze_steam_separator"), Multiblocks.STEAM_SEPARATOR[0].asStack(),
         "BPB", "GTG", "BPB",
         'B', GTBlocks.CASING_BRONZE_BRICKS.asStack(),
         'P', new MaterialEntry(TagPrefix.plate, GTMaterials.WroughtIron),
         'G', ChemicalHelper.get(TagPrefix.gear, GTNHThingsMaterials.Tumbaga),
         'T', ChemicalHelper.get(TagPrefix.frameGt, GTNHThingsMaterials.Tumbaga)
         );
+        
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_separator_from_bronze"), Multiblocks.STEAM_SEPARATOR[1].asStack(), Multiblocks.STEAM_SEPARATOR[0].asStack());
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_separator_to_bronze"), Multiblocks.STEAM_SEPARATOR[0].asStack(), Multiblocks.STEAM_SEPARATOR[1].asStack());
 
-        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("steam_presser"), Multiblocks.STEAM_PRESSER.asStack(),
+        VanillaRecipeHelper.addShapedRecipe(provider, GTNHThings.id("bronze_steam_presser"), Multiblocks.STEAM_PRESSER[0].asStack(),
         "BPB", "PAP", "BTB",
         'B', GTBlocks.CASING_BRONZE_BRICKS.asStack(),
         'P', new MaterialEntry(TagPrefix.plate, GTMaterials.WroughtIron),
         'A', new ItemStack(Blocks.ANVIL),
         'T', ChemicalHelper.get(TagPrefix.frameGt, GTNHThingsMaterials.Tumbaga)
         );
+
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_presser_from_bronze"), Multiblocks.STEAM_PRESSER[1].asStack(), Multiblocks.STEAM_PRESSER[0].asStack());
+        VanillaRecipeHelper.addShapelessRecipe(provider, GTNHThings.id("steel_steam_presser_to_bronze"), Multiblocks.STEAM_PRESSER[0].asStack(), Multiblocks.STEAM_PRESSER[1].asStack());
     }
 
     private static void registerIngredientRecipes(Consumer<FinishedRecipe> provider) {

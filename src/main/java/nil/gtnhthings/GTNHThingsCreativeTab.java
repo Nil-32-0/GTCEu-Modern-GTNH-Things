@@ -10,7 +10,7 @@ import nil.gtnhthings.machines.Multiblocks;
 public class GTNHThingsCreativeTab {
     public static RegistryEntry<CreativeModeTab> MAIN = GTNHThingsRegistration.REGISTRATE.defaultCreativeTab("main",
                     builder -> builder.displayItems(new GTCreativeModeTabs.RegistrateDisplayItemsGenerator("main", GTNHThingsRegistration.REGISTRATE))
-                            .icon(() -> Multiblocks.STEAM_FUSER.asStack())
+                            .icon(() -> Multiblocks.STEAM_FUSER[0].asStack())
                             .title(GTNHThingsRegistration.REGISTRATE.addLang("itemGroup", GTNHThings.id("main"), "GTNH Things"))
                             .build())
             .register();

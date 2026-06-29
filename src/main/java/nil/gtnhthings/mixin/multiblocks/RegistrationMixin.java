@@ -16,6 +16,8 @@ import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.machines.GTMultiMachines;
 import com.gregtechceu.gtceu.utils.memoization.GTMemoizer;
 
+import nil.gtnhthings.machines.multiblocks.GTNHSteamParallelMultiblockMachine;
+
 @Mixin(GTMultiMachines.class)
 public class RegistrationMixin {
     @Inject(method = "init", at = @At("RETURN"), remap = false)
@@ -25,7 +27,7 @@ public class RegistrationMixin {
             .aisle("XXX", "X#X", "X#X", "XGX")
             .aisle("XXX", "FSF", "FXF", "#H#")
             .where('S', Predicates.controller(blocks(GTMultiMachines.STEAM_GRINDER.getBlock())))
-            .where('#', Predicates.air())
+            .where('#', Predicates.any())
             .where('F', frames(Bronze))
             .where('G', blocks(GTBlocks.CASING_BRONZE_GEARBOX.get()))
             .where('H', Predicates.abilities(PartAbility.STEAM))
@@ -34,5 +36,7 @@ public class RegistrationMixin {
                 .or(Predicates.abilities(PartAbility.STEAM_EXPORT_ITEMS).setPreviewCount(1)))
             .build()
         ));
+
+        GTMultiMachines.STEAM_GRINDER.setRecipeModifier(GTNHSteamParallelMultiblockMachine::recipeModifier);
     }
 }
