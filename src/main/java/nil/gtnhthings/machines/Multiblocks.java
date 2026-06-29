@@ -16,7 +16,6 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern;
 import com.gregtechceu.gtceu.api.pattern.Predicates;
 import com.gregtechceu.gtceu.api.registry.registrate.MultiblockMachineBuilder;
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes;
-import com.gregtechceu.gtceu.common.data.machines.GTMultiMachines;
 
 import net.minecraftforge.common.Tags.Blocks;
 import nil.gtnhthings.GTNHThings;
@@ -220,7 +219,7 @@ public class Multiblocks {
                 .or(Predicates.abilities(PartAbility.STEAM_EXPORT_ITEMS).setPreviewCount(1)))
             .build())
         .workableCasingModel(GTNHSteamParallelMultiblockMachine.getBaseTexture(2), 
-            GTCEu.id("block/multiblock/steam_grinder"))
+            GTNHThings.id("block/multiblock/steam_grinder"))
         .register();
 
     public static void init() {}

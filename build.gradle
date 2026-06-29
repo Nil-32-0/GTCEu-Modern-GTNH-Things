@@ -170,7 +170,7 @@ dependencies {
     modImplementation "com.lowdragmc.ldlib:ldlib-forge-${minecraft_version}:${ldlib_version}"
 
     modImplementation "com.tterrag.registrate:Registrate:MC1.20-${registrate_version}"
-    jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC${minecraft_version},MC1.21)")
+    jarJar(group: 'com.tterrag.registrate', name: 'Registrate', version: "[MC1.20-${registrate_version},)")
 }
 
 // Uncomment the lines below if you wish to configure mixin. The mixin file should be named modid.mixins.json.
