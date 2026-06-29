@@ -1,0 +1,11 @@
+{
+  "block.gtnhthings.steam_blender": "Steam Blender",
+  "block.gtnhthings.steam_fuser": "Steam Fuser",
+  "block.gtnhthings.steam_presser": "Steam Presser",
+  "block.gtnhthings.steam_purifier": "Steam Purifier",
+  "block.gtnhthings.steam_separator": "Steam Separator",
+  "block.gtnhthings.steam_squasher": "Steam Squasher",
+  "itemGroup.gtnhthings.main": "GTNH Things",
+  "material.gtnhthings.tumbaga": "Tumbaga",
+  "material.gtnhthings.tumbaga_mix": "Tumbaga Mix"
+}
