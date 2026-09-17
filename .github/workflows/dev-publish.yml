@@ -8,6 +8,8 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        permissions:
+            contents: write
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
@@ -28,7 +30,7 @@ jobs:
               run: ./gradlew build
 
             - name: Get date
-              run: echo "datetime=$(date + '%Y-%m-%d')" >> $GITHUB_ENV
+              run: echo "datetime=$(date +'%Y-%m-%d-%H-%M-%S')" >> $GITHUB_ENV
 
             - name: Release
               uses: softprops/action-gh-release@v3
